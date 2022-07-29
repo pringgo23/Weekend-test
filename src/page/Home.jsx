@@ -8,6 +8,11 @@ import sloopingAstronout from "../assets/Group-4.png";
 import circle from "../assets/Oval-1.svg";
 import before from "../assets/arrow-before.svg";
 import after from "../assets/arrow-after.svg";
+import image1 from "../assets/image-2.jpg";
+import image2 from "../assets/image-1.jpg";
+import image3 from "../assets/image-3.jpg";
+import ornament from "../assets/Path-3.svg";
+import backAstronout from "../assets/Group-3.png";
 
 function Homepage() {
   return (
@@ -94,6 +99,97 @@ function Homepage() {
             consequat. Duis aute irure dolor in reprehenderit in voluptate velit
             esse cillum dolore eu fugiat nulla pariatur.
           </p>
+        </div>
+        <div>
+          <h2 className="res-title">Resources</h2>
+          <p className="res-paragraph">
+            These cases are perfectly simple and easy to distinguish. In a free
+            hour, when our power of choice is untrammelled and when nothing
+            prevents our being able to do what we like best
+          </p>
+        </div>
+
+        <div>
+          <h2 className="help-title">Help & Tips</h2>
+          <Row>
+            <Col>
+              <div>
+                <img className="help-image" src={image1} alt="gambar1" />
+              </div>
+              <div>
+                <div className="rec-opaque">
+                  <div className="d-flex p-2">
+                    <p className="box-content">
+                      {" "}
+                      Start quickly with simple steps
+                    </p>
+                    <img className="ms-5 arrow-help" src={after} alt="" />
+                  </div>
+                </div>
+              </div>
+            </Col>
+            <Col>
+              <div>
+                <img className="help-image2" src={image2} alt="gambar2" />
+              </div>
+              <div>
+                <div className="rec-opaque2">
+                  <div className="d-flex p-2">
+                    <p className="box-content">
+                      Run smoothly at vero eos et accusamus
+                    </p>
+                    <img className="ms-5 arrow-help" src={after} alt="" />
+                  </div>
+                </div>
+              </div>
+            </Col>
+            <Col>
+              <div>
+                <img className="ornament" src={ornament} alt="ornament" />
+              </div>
+              <div>
+                <img className="help-image3" src={image3} alt="gambar3" />
+              </div>
+              <div>
+                <div className="rec-opaque3">
+                  <div className="d-flex p-2">
+                    <p className="box-content">
+                      Denounce with righteous indignation
+                    </p>
+                    <img className="ms-5 arrow-help" src={after} alt="" />
+                  </div>
+                </div>
+              </div>
+            </Col>
+          </Row>
+        </div>
+
+        <div>
+          <h2 className="allset">You're all set. </h2>
+          <p className="content-allset">
+            The wise man therefore always holds in these matters to this
+            principle of selection.
+          </p>
+        </div>
+
+        <div>
+          <img
+            className="back-astronout"
+            src={backAstronout}
+            alt="backward-astronout"
+          />
+        </div>
+        <div className="footer">
+          <Row>
+            <Col>
+              <p className="foot-note">wknd@2020</p>
+            </Col>
+            <Col>
+              <Button className="oval" variant="outline-light">
+                <p className="foot-alpha">alpha version 0.1</p>
+              </Button>
+            </Col>
+          </Row>
         </div>
       </div>
     </div>

@@ -155,7 +155,7 @@
 
 .body-3 {
   background-color: black;
-  height: 1000px;
+  height: 1600px;
 }
 
 .rectangle {
@@ -239,6 +239,224 @@
 
   text-align: center;
   letter-spacing: -0.642857px;
+
+  color: #ffffff;
+}
+
+.res-title {
+  position: absolute;
+  width: 149px;
+  height: 38px;
+  left: 609.5px;
+  top: 2027px;
+
+  font-family: "WorkSans";
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 600;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.res-paragraph {
+  position: absolute;
+  width: 500px;
+  height: 81px;
+  left: 430px;
+  top: 2090px;
+
+  font-family: "WorkSans";
+  font-size: 18px;
+  line-height: 27px;
+  /* or 150% */
+
+  text-align: center;
+  letter-spacing: -0.642857px;
+
+  color: #ffffff;
+}
+
+.help-title {
+  position: absolute;
+  width: 179px;
+  height: 38px;
+  left: 594px;
+  top: 2250px;
+
+  font-family: "WorkSans";
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 600;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.help-image {
+  position: absolute;
+  left: 250px;
+  top: 2320px;
+  width: 300px;
+  height: 180px;
+}
+
+.rec-opaque {
+  background-color: black;
+  opacity: 70%;
+  position: absolute;
+  left: 250px;
+  top: 2430px;
+  width: 300px;
+  height: 70px;
+}
+
+.box-content {
+  font-family: "WorkSans";
+  font-size: 16px;
+  font-weight: 600;
+  padding-top: 5px;
+  text-align: right;
+
+  color: #ffffff;
+}
+
+.arrow-help {
+  margin-top: -15px;
+  margin-right: 20px;
+}
+
+.help-image2 {
+  position: absolute;
+  left: 580px;
+  top: 2320px;
+  width: 300px;
+  height: 180px;
+}
+
+.rec-opaque2 {
+  background-color: black;
+  opacity: 70%;
+  position: absolute;
+  left: 580px;
+  top: 2430px;
+  width: 300px;
+  height: 70px;
+}
+
+.help-image3 {
+  position: absolute;
+  left: 910px;
+  top: 2320px;
+  width: 300px;
+  height: 180px;
+}
+
+.rec-opaque3 {
+  background-color: black;
+  opacity: 70%;
+  position: absolute;
+  left: 910px;
+  top: 2430px;
+  width: 300px;
+  height: 70px;
+}
+
+.ornament {
+  position: absolute;
+  width: 159px;
+  height: 195px;
+  left: 1130px;
+  top: 2242px;
+}
+
+.allset {
+  position: absolute;
+  width: 218px;
+  height: 38px;
+  left: 575px;
+  top: 2597px;
+
+  font-family: "WorkSans";
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 38px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.content-allset {
+  position: absolute;
+  width: 519px;
+  height: 54px;
+  left: 430px;
+  top: 2657px;
+
+  padding: 0px 20px 20px 20px;
+
+  font-family: "WorkSans";
+  font-size: 18px;
+  line-height: 27px;
+  /* or 150% */
+
+  text-align: center;
+  letter-spacing: -0.642857px;
+
+  color: #ffffff;
+}
+
+.back-astronout {
+  position: absolute;
+  width: 244px;
+  height: 310px;
+  left: 0px;
+  top: 2610px;
+}
+
+.footer {
+  position: absolute;
+  width: 1366px;
+  height: 47px;
+  left: 0px;
+  top: 2920px;
+
+  background: #0b24fb;
+}
+
+.foot-note {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+  /* identical to box height */
+
+  padding: 10px 10px 10px 10px;
+
+  color: #ffffff;
+}
+
+.oval {
+  width: 13 0px;
+  height: 30px;
+  margin-top: 5px;
+
+  border-radius: 25px;
+}
+
+.foot-alpha {
+  font-family: "WorkSans";
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
 
   color: #ffffff;
 }
