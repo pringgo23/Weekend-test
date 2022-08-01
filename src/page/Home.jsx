@@ -1,35 +1,131 @@
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/home.css";
-import { Button, Row, Col } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import axios from "axios";
 
 import astronout from "../assets/Bitmap-1.png";
 import sloopingAstronout from "../assets/Group-4.png";
 import circle from "../assets/Oval-1.svg";
-import before from "../assets/arrow-before.svg";
 import after from "../assets/arrow-after.svg";
 import image1 from "../assets/image-2.jpg";
 import image2 from "../assets/image-1.jpg";
 import image3 from "../assets/image-3.jpg";
 import ornament from "../assets/Path-3.svg";
 import backAstronout from "../assets/Group-3.png";
+import backgroundHeader from "../assets/BG_1.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
-function Homepage() {
+// const dataTestimoni = [
+//   {
+//     title: "Blue",
+//     info: "Places where you can leverage tools and software to free up time to focus on growing the business.",
+//   },
+//   {
+//     title: "Angelus",
+//     info: "Places where All those apps took me months to get running. Now the site practically runs itself! can leverage tools and software to free up time to focus on growing the business.",
+//   },
+//   {
+//     title: "SoYoung",
+//     info: "Unless you have a truly unique product, it will be very hard to differentiate and gain brand traction",
+//   },
+//   {
+//     title: "Blue",
+//     info: "Places where you can leverage tools and software to free up time to focus on growing the business.",
+//   },
+//   {
+//     title: "Angelus",
+//     info: "Places where All those apps took me months to get running. Now the site practically runs itself! can leverage tools and software to free up time to focus on growing the business.",
+//   },
+//   {
+//     title: "SoYoung",
+//     info: "Unless you have a truly unique product, it will be very hard to differentiate and gain brand traction",
+//   },
+// ];
+
+// const dataHelp = [
+//   {
+//     title: "Start quickly with simple steps",
+//     image: image1,
+//   },
+//   {
+//     title: "Run smoothly at vero eos et accusamus",
+//     image: image2,
+//   },
+//   {
+//     title: "Denounce with righteous indignation",
+//     image: image3,
+//   },
+// ];
+
+const CardHelp = ({ image, title }) => {
+  return (
+    <div className="card-help">
+      <img className="help-image" src={image} alt="gambar1" />
+      <div className="rec-opaque">
+        <div className="d-flex p-2">
+          <p className="box-content">{title}</p>
+          <img className="ms-5 arrow-help" src={after} alt="" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Homepage = () => {
+  const [tips, setTips] = useState([]);
+  const [testimoni, setTestimoni] = useState([]);
+
+  const renderTestimoni = useMemo(() => {
+    return testimoni.map((el, idx) => {
+      return (
+        <SwiperSlide key={idx} className={"slider-width"}>
+          <div className="rectangle">
+            <p className="rec-title">{el.by}</p>
+            <p className="rec-paragraph">{el.testimony}</p>
+          </div>
+        </SwiperSlide>
+      );
+    });
+  }, [testimoni]);
+
+  const renderHelp = useMemo(() => {
+    return tips.map((el, idx) => {
+      return <CardHelp key={idx} title={el.title} image={el.image} />;
+    });
+  }, [tips]);
+
+  useEffect(() => {
+    axios
+      .get(`https://wknd-take-home-challenge-api.herokuapp.com/help-tips`)
+      .then((data) => {
+        const result = data.data;
+        setTips(result);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(`https://wknd-take-home-challenge-api.herokuapp.com/testimonial`)
+      .then((data) => {
+        const result = data.data;
+        setTestimoni(result);
+      });
+  }, []);
+
   return (
     <div className="body">
       <div className="body-1">
-        <div className="bg-1">
-          <div>
-            <h1 className="title-1">Weekend From Home</h1>
-            <p className="title-2">Stay active with a little workout.</p>
-          </div>
-          <div>
-            <img className="astronout" src={astronout} alt="astronout" />
-            <Button className="btn-astro" variant="light">
-              Let's Go
-            </Button>
-          </div>
+        <div className="header-title">
+          <h1 className="title-1">Weekend From Home</h1>
+          <p className="title-2">Stay active with a little workout.</p>
         </div>
+        <img src={backgroundHeader} alt="bg-header" className="bg-1" />
+        <img className="astronout" src={astronout} alt="astronout" />
+        <Button className="btn-astro" variant="light">
+          Let's Go
+        </Button>
       </div>
 
       <div className="body-2">
@@ -49,48 +145,23 @@ function Homepage() {
             Merriam-Webster.com Dictionary.
           </p>
           <p id="commentBy">-weekend team</p>
+          <div className="wrap-circle">
+            <img id="circle" src={circle} alt="circle" />
+          </div>
         </div>
-        <img id="circle" src={circle} alt="circle" />
-      </div>
-      <div>
-        <p className="testimonial">Testimonial</p>
       </div>
 
       <div className="body-3">
-        <div className="wrap-rectangle">
+        <div className="testimoni-section">
+          <p className="testimonial">Testimonial</p>
           <div className="d-flex justify-content-center">
-            <Row className="g-2 g-lg-3">
-              <Col xs={2}>
-                <img className="before" src={before} alt="before" />
-              </Col>
-              <Col xs={2} className="rectangle">
-                <h2 className="rec-title">Blu Kicks</h2>
-                <p className="rec-paragraph">
-                  Places where you can leverage tools and software to free up
-                  time to focus on growing the business.
-                </p>
-              </Col>
-              <Col xs={2} className="rectangle">
-                <h2 className="rec-title">Angelus</h2>
-                <p className="rec-paragraph">
-                  All those apps took me months to get running. Now the site
-                  practically runs itself!
-                </p>
-              </Col>
-              <Col xs={2} className="rectangle">
-                <h2 className="rec-title">SoYoung</h2>
-                <p className="rec-paragraph">
-                  Unless you have a truly unique product, it will be very hard
-                  to differentiate and gain brand traction
-                </p>
-              </Col>
-              <Col xs={2}>
-                <img className="before" src={after} alt="after" />
-              </Col>
-            </Row>
+            <Swiper className="swiper" slidesPerView={2.5}>
+              {renderTestimoni}
+            </Swiper>
           </div>
         </div>
-        <div>
+
+        <div className="wrap-POV">
           <h2 className="pov-title">POV</h2>
           <p className="pov-paragraph">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -100,100 +171,45 @@ function Homepage() {
             esse cillum dolore eu fugiat nulla pariatur.
           </p>
         </div>
-        <div>
-          <h2 className="res-title">Resources</h2>
-          <p className="res-paragraph">
+        <div className="wrap-POV mt-5">
+          <div className="wrap-pov-title">
+            <h2 className="pov-title">Resources</h2>
+          </div>
+          <p className="pov-paragraph">
             These cases are perfectly simple and easy to distinguish. In a free
             hour, when our power of choice is untrammelled and when nothing
             prevents our being able to do what we like best
           </p>
         </div>
 
-        <div>
+        <div className="wrap-help">
+          <img src={ornament} alt="" className="ornament" />
           <h2 className="help-title">Help & Tips</h2>
-          <Row>
-            <Col>
-              <div>
-                <img className="help-image" src={image1} alt="gambar1" />
-              </div>
-              <div>
-                <div className="rec-opaque">
-                  <div className="d-flex p-2">
-                    <p className="box-content">
-                      {" "}
-                      Start quickly with simple steps
-                    </p>
-                    <img className="ms-5 arrow-help" src={after} alt="" />
-                  </div>
-                </div>
-              </div>
-            </Col>
-            <Col>
-              <div>
-                <img className="help-image2" src={image2} alt="gambar2" />
-              </div>
-              <div>
-                <div className="rec-opaque2">
-                  <div className="d-flex p-2">
-                    <p className="box-content">
-                      Run smoothly at vero eos et accusamus
-                    </p>
-                    <img className="ms-5 arrow-help" src={after} alt="" />
-                  </div>
-                </div>
-              </div>
-            </Col>
-            <Col>
-              <div>
-                <img className="ornament" src={ornament} alt="ornament" />
-              </div>
-              <div>
-                <img className="help-image3" src={image3} alt="gambar3" />
-              </div>
-              <div>
-                <div className="rec-opaque3">
-                  <div className="d-flex p-2">
-                    <p className="box-content">
-                      Denounce with righteous indignation
-                    </p>
-                    <img className="ms-5 arrow-help" src={after} alt="" />
-                  </div>
-                </div>
-              </div>
-            </Col>
-          </Row>
+          <div className="content-help">{renderHelp}</div>
         </div>
-
-        <div>
-          <h2 className="allset">You're all set. </h2>
-          <p className="content-allset">
+        <div className="wrap-all-set">
+          <h2 className="pov-all-set">You're all set.</h2>
+          <p className="pov-paragraph">
             The wise man therefore always holds in these matters to this
             principle of selection.
           </p>
         </div>
-
+        <img
+          className="back-astronout"
+          src={backAstronout}
+          alt="backward-astronout"
+        />
+      </div>
+      <div className="footer">
+        <p className="foot-note">wknd@2020</p>
         <div>
-          <img
-            className="back-astronout"
-            src={backAstronout}
-            alt="backward-astronout"
-          />
-        </div>
-        <div className="footer">
-          <Row>
-            <Col>
-              <p className="foot-note">wknd@2020</p>
-            </Col>
-            <Col>
-              <Button className="oval" variant="outline-light">
-                <p className="foot-alpha">alpha version 0.1</p>
-              </Button>
-            </Col>
-          </Row>
+          <Button className="oval" variant="outline-light">
+            <p className="foot-alpha">alpha version 0.1</p>
+          </Button>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Homepage;

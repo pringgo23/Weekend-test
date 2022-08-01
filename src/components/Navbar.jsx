@@ -5,13 +5,17 @@ import { Navbar } from "react-bootstrap";
 
 function NavbarComponent() {
   return (
-    <Navbar className="p-1">
-      <img className="person" src={person} width="33px" height="33px" />
-      <div className="d-flex flex-column ps-2 mt-3">
-        <p className="sentence-1"> Good Morning</p>
-        <p className="sentence-2"> Fellas</p>
+    <div className="header">
+      <div className="logo">
+        <div className="person">
+          <img className="person" src={person} width="33px" height="33px" />
+        </div>
+        <div className="text-logo">
+          <p className="sentence-1"> Good Morning</p>
+          <p className="sentence-2"> Fellas</p>
+        </div>
       </div>
-    </Navbar>
+    </div>
   );
 }
 

@@ -1,45 +1,89 @@
+.body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .person {
-  margin-left: 213px;
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  z-index: 10;
+  background-color: #fff;
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  align-items: center;
+  padding: 17px 213px 17px 213px;
+}
+
+.logo {
+  display: flex;
+}
+
+.text-logo {
+  display: flex;
+  flex-direction: column;
+  margin-left: 13px;
+}
+
+.header-title {
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
 }
 
 .sentence-1 {
-  margin-bottom: -5px;
-  margin-left: 3px;
   font-size: 12px;
-  font-family: WorkSans;
+  font-family: Work Sans;
+  margin-bottom: 0px !important;
 }
 
 .sentence-2 {
-  font-family: WorkSans;
+  font-family: "Work Sans", sans-serif;
   font-size: 16px;
   font-weight: 600;
+  margin-bottom: 0px !important;
+  text-align: left;
 }
 
 .body-1 {
+  position: relative;
   background-color: #eebece;
   height: 766.57px;
-  width: 1366px;
+  width: 100%;
+  padding-top: 84px;
+  padding-bottom: 84px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .bg-1 {
-  background-image: url("../assets/BG_1.png");
   position: absolute;
-  width: 1366px;
+  width: 100%;
   height: 730px;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
 }
 
 .title-1 {
-  font-family: "WorkSans";
+  font-family: "Work Sans", sans-serif;
   font-size: 62px;
   line-height: 51px;
   font-weight: 900;
   text-align: center;
   color: #ffffff;
-  margin-top: 120px;
 }
 
 .title-2 {
-  font-family: "WorkSans";
+  font-family: "Work Sans", sans-serif;
   font-size: 21px;
   font-style: italic;
   line-height: 25px;
@@ -51,23 +95,19 @@
 }
 
 .astronout {
-  position: absolute;
   width: 184px;
   height: 305px;
-  left: 592px;
-  top: 314px;
+  z-index: 1;
+  margin-top: 67px;
 }
 
 .btn-astro {
-  position: absolute;
-  left: 43.5%;
-  top: calc(50% - 19px / 2 + 0.5px);
   background: #ffffff;
   box-shadow: 0px 20px 30px rgba(249, 131, 171, 0.5);
   border-radius: 29px;
   width: 180px;
-  margin-top: 150px;
-
+  margin-top: -110px;
+  z-index: 2;
   font-family: "WorkSans";
   font-size: 16px;
   line-height: 25px;
@@ -76,43 +116,50 @@
 }
 
 .body-2 {
-  width: 1366px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   height: 520px;
-  left: 0px;
-  top: 768px;
   background: #eebece;
 }
 
 #sloop-astronout {
   position: absolute;
+  right: 0px;
+  top: 0px;
   width: auto;
   height: 158px;
 }
 
+.wrap-definition {
+  width: 40%;
+  margin-top: 152px;
+}
+
+.wrap-help {
+  margin-top: 100px;
+  margin-bottom: 127px;
+  position: relative;
+}
+
 #definition {
-  position: absolute;
-  width: 619px;
+  width: 100%;
   height: 160px;
-  left: 374px;
-  top: 1000px;
-  font-family: "Work Sans";
+  font-family: "Work Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 21px;
   line-height: 32px;
   /* or 152% */
   text-align: right;
-  letter-spacing: -0.75px;
 }
 
 #commentBy {
-  position: absolute;
-  width: 163px;
-  height: 25px;
-  left: 830px;
-  top: 1150px;
+  width: 100%;
 
-  font-family: "WorkSans";
+  font-family: "Work Sans", sans-serif;
   font-size: 21px;
   line-height: 25px;
   font-weight: 700;
@@ -122,60 +169,66 @@
   text-align: right;
   color: #ffffff;
 }
-
-#circle {
-  position: absolute;
-  width: 89px;
-  height: 89px;
-  left: 283px;
-  top: 1173px;
+.wrap-circle {
+  width: 10%;
 }
 
-.testimonial {
-  position: absolute;
-  width: 188px;
-  height: 38px;
-  left: 589px;
-  top: 1219px;
-
-  font-family: "WorkSans";
-  font-size: 32px;
-  font-weight: 800;
-  line-height: 38px;
-  /* identical to box height */
-
-  display: flex;
-  align-items: flex-end;
-  text-align: center;
-
-  color: #ffffff;
-
-  text-shadow: 0px 20px 30px rgba(249, 131, 171, 0.7);
+#circle {
+  width: 89px;
+  height: 89px;
 }
 
 .body-3 {
   background-color: black;
-  height: 1600px;
-}
-
-.rectangle {
-  width: 247px;
-  height: 140px;
-  padding: 5px 5px 5px 5px 5px;
-  margin-left: 20px;
-
-  background: #ffffff;
-  box-shadow: 0px -10px 20px rgba(249, 131, 171, 0.2);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 4;
+  position: relative;
+  align-items: center;
 }
 
 .wrap-rectangle {
-  position: absolute;
-  margin-top: -30px;
-  margin-left: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-top: -100px; */
+  width: 100%;
+  background-color: blue;
+}
+
+.testimonial {
+  width: 100%;
+  height: 38px;
+  font-family: "Work Sans", sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 38px;
+  color: #ffffff;
+}
+
+.rectangle {
+  display: flex;
+  flex-direction: column;
+  /* width: 247px; */
+  height: 140px;
+  padding: 5px 5px 5px 5px 5px;
+  background-color: white;
+  box-shadow: 0px -10px 20px rgba(249, 131, 171, 0.2);
+}
+
+.slider-width {
+  /* width: 30vw !important; */
+  padding-right: 13px;
+}
+
+.swiper {
+  width: 50vw;
 }
 
 .rec-title {
-  font-family: "Work Sans";
+  font-family: "Work Sans", sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 32px;
@@ -187,7 +240,7 @@
 }
 
 .rec-paragraph {
-  font-family: "Work Sans";
+  font-family: "Work Sans", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -195,7 +248,7 @@
   letter-spacing: -0.428571px;
   text-align: justify;
 
-  padding: 0px 20px 20px 20px;
+  padding: 0px 20px 30px 20px;
 }
 
 .btn-before {
@@ -207,68 +260,80 @@
   margin-top: 50px;
 }
 
-.pov-title {
-  position: absolute;
-  width: 68px;
-  height: 38px;
-  left: 649px;
-  top: 1750px;
+.wrap-POV {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wrap-all-set {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 203px;
+}
 
-  font-family: "WorkSans";
+.testimoni-section {
+  flex-direction: column;
+  display: flex;
+  width: 80%;
+  margin-bottom: 96px;
+  margin-top: -100px;
+}
+
+.pov-title {
+  /* width: 68px; */
+  height: 38px;
+  font-family: "Work Sans", sans-serif;
   font-size: 32px;
   line-height: 38px;
   font-weight: 600;
-  /* identical to box height */
-
   text-align: center;
+  color: white;
+}
 
-  color: #ffffff;
+.pov-all-set {
+  height: 38px;
+  font-family: "Work Sans", sans-serif;
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 600;
+  text-align: center;
+  color: white;
 }
 
 .pov-paragraph {
-  position: absolute;
-  width: 500px;
-  height: 135px;
-  left: 430px;
-  top: 1830px;
-
-  font-family: "WorkSans";
+  font-family: "Work Sans", sans-serif;
   font-size: 18px;
   line-height: 27px;
   /* or 150% */
 
   text-align: center;
   letter-spacing: -0.642857px;
+
+  padding: 20px 60px 20px 60px;
 
   color: #ffffff;
 }
 
 .res-title {
-  position: absolute;
   width: 149px;
   height: 38px;
-  left: 609.5px;
-  top: 2027px;
-
-  font-family: "WorkSans";
+  font-family: "Work Sans", sans-serif;
   font-size: 32px;
   line-height: 38px;
   font-weight: 600;
-  /* identical to box height */
-
   text-align: center;
-
   color: #ffffff;
 }
 
 .res-paragraph {
-  position: absolute;
   width: 500px;
   height: 81px;
-  left: 430px;
-  top: 2090px;
-
-  font-family: "WorkSans";
+  font-family: "Work Sans", sans-serif;
   font-size: 18px;
   line-height: 27px;
   /* or 150% */
@@ -279,28 +344,23 @@
   color: #ffffff;
 }
 
-.help-title {
-  position: absolute;
-  width: 179px;
-  height: 38px;
-  left: 594px;
-  top: 2250px;
+.card-help {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
 
-  font-family: "WorkSans";
+.help-title {
+  font-family: "Work Sans", sans-serif;
   font-size: 32px;
   line-height: 38px;
   font-weight: 600;
-  /* identical to box height */
-
   text-align: center;
-
   color: #ffffff;
+  margin-bottom: 24px;
 }
 
 .help-image {
-  position: absolute;
-  left: 250px;
-  top: 2320px;
   width: 300px;
   height: 180px;
 }
@@ -308,15 +368,15 @@
 .rec-opaque {
   background-color: black;
   opacity: 70%;
-  position: absolute;
-  left: 250px;
-  top: 2430px;
   width: 300px;
   height: 70px;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
 }
 
 .box-content {
-  font-family: "WorkSans";
+  font-family: "Work Sans", sans-serif;
   font-size: 16px;
   font-weight: 600;
   padding-top: 5px;
@@ -370,8 +430,8 @@
   position: absolute;
   width: 159px;
   height: 195px;
-  left: 1130px;
-  top: 2242px;
+  top: 0px;
+  right: -100px;
 }
 
 .allset {
@@ -381,7 +441,7 @@
   left: 575px;
   top: 2597px;
 
-  font-family: "WorkSans";
+  font-family: "Work Sans", sans-serif;
   font-size: 32px;
   font-weight: 600;
   line-height: 38px;
@@ -400,8 +460,7 @@
   top: 2657px;
 
   padding: 0px 20px 20px 20px;
-
-  font-family: "WorkSans";
+  font-family: "Work Sans", sans-serif;
   font-size: 18px;
   line-height: 27px;
   /* or 150% */
@@ -412,51 +471,168 @@
   color: #ffffff;
 }
 
+.content-help {
+  display: flex;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
 .back-astronout {
   position: absolute;
   width: 244px;
   height: 310px;
   left: 0px;
-  top: 2610px;
+  bottom: 0px;
 }
 
 .footer {
-  position: absolute;
-  width: 1366px;
-  height: 47px;
-  left: 0px;
-  top: 2920px;
-
+  width: 100%;
   background: #0b24fb;
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 213px 24px 213px;
+  align-items: center;
 }
 
 .foot-note {
-  font-family: "Work Sans";
+  font-family: "Work Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
-  font-weight: 600;
   line-height: 19px;
-  /* identical to box height */
-
-  padding: 10px 10px 10px 10px;
-
   color: #ffffff;
+  margin-bottom: 0 !important;
 }
 
 .oval {
   width: 13 0px;
   height: 30px;
-  margin-top: 5px;
-
   border-radius: 25px;
 }
 
 .foot-alpha {
-  font-family: "WorkSans";
+  font-family: "Work Sans", sans-serif;
   font-size: 14px;
   line-height: 16px;
   text-align: center;
-
   color: #ffffff;
+}
+
+@media only screen and (max-width: 375px) {
+  .header {
+    padding: 17px 24px 17px 24px;
+    z-index: 10;
+  }
+
+  .bg-1 {
+    height: 200px;
+  }
+
+  .body-2 {
+    height: 600px;
+  }
+
+  .wrap-definition {
+    width: 311px;
+    height: 168px;
+  }
+  #definition {
+    font-family: "Work Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 64.5px;
+  }
+
+  #commentBy {
+    font-family: "WorkSans";
+    font-size: 16px;
+    line-height: 19px;
+    text-align: right;
+  }
+
+  .wrap-circle {
+    width: 89px;
+    height: 89px;
+    margin-left: 25px;
+  }
+
+  .testimonial {
+    font-family: "Work Sans", sans-serif;
+    font-size: 32px;
+    line-height: 38px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .wrap-pov-title {
+    font-family: "Work Sans", sans-serif;
+    width: 100%;
+    display: flex;
+    margin-left: -240px;
+  }
+
+  .pov-title {
+    font-family: "Work Sans", sans-serif;
+    margin: 67px 275px 30px 85px;
+    width: 218px;
+    height: 38px;
+  }
+
+  .pov-paragraph {
+    font-family: "Work Sans", sans-serif;
+    width: 311px;
+    height: 192px;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.571429px;
+    text-align: left;
+    padding: 0px 32px 67px 32px;
+  }
+
+  .wrap-help {
+    font-family: "Work Sans", sans-serif;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .help-title {
+    font-family: "Work Sans", sans-serif;
+    margin: 0px 164px 30px 40px;
+    width: 50%;
+  }
+
+  .content-help {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 32px 10px 35px;
+  }
+
+  .ornament {
+    display: none;
+  }
+
+  .pov-all-set {
+    font-family: "Work Sans", sans-serif;
+    width: 150%;
+    margin: 20px 100px 30px 32px;
+  }
+
+  .footer {
+    width: 375px;
+    height: 67px;
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 20px 24px 20px;
+  }
+
+  .rectangle {
+  }
+
+  .slider-width {
+    width: 200px !important;
+  }
 }
